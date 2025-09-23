@@ -1,4 +1,9 @@
 Vehicle and Pedestrian Detection & Tracking 🚗🚶‍♀️
+
+## 🚀 Live Demo
+Try the deployed app here: [Streamlit Demo Link](https://vehicle-pedestrian-tracking-e2njc6uozbjkuhup6jvzxy.streamlit.app)
+
+https://vehicle-pedestrian-tracking-e2njc6uozbjkuhup6jvzxy.streamlit.app/
 📌 Project Overview
 
 This project implements a YOLOv8 segmentation model combined with ByteTrack for detecting and tracking vehicles and pedestrians in videos.
