@@ -108,7 +108,7 @@ Archived early webapp attempts are kept in archive_old_webapp/ for reference.
 
 ByteTrack support is modular — can be swapped or extended with other trackers.
 
-✨ Authors: Anirudh Sharma & Team
+✨ Authors: Anirudh Sharma 
 📅 2025
 
 
