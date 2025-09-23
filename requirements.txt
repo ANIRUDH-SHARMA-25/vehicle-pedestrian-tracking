@@ -1,5 +1,9 @@
 streamlit>=1.10
 ultralytics>=8.0.0
-opencv-python-headless
+opencv-python-headless==4.8.0.76
 numpy
 pillow
+loguru
+lap
+filterpy
+scikit-image
