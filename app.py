@@ -1,4 +1,4 @@
-# app.py (Streamlit UI)
+# app.py (Streamlit UI with session state fix)
 import streamlit as st
 import os
 from tracker import process_video
@@ -36,13 +36,22 @@ if uploaded is not None:
                     conf=conf
                 )
                 st.success("Processing complete ✅")
-                st.video(annotated_path)
 
-                with open(json_path, "r") as fh:
-                    st.download_button("Download results.json", fh, file_name="results.json")
+                # store in session state
+                st.session_state["json_path"] = json_path
+                st.session_state["annotated_path"] = annotated_path
 
-                with open(annotated_path, "rb") as fh:
-                    st.download_button("Download annotated video", fh, file_name="annotated_video.mp4")
             except Exception as e:
                 st.error(f"Processing failed: {e}")
                 st.write("See README for instructions to enable full ByteTrack support.")
+
+# show results if available
+if "annotated_path" in st.session_state and "json_path" in st.session_state:
+    st.video(st.session_state["annotated_path"])
+
+    with open(st.session_state["json_path"], "r") as fh:
+        st.download_button("Download results.json", fh, file_name="results.json")
+
+    with open(st.session_state["annotated_path"], "rb") as fh:
+        st.download_button("Download annotated video", fh, file_name="annotated_video.mp4")
+
